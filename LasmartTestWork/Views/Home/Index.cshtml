@@ -1,0 +1,20 @@
+﻿<div id ="container">
+    <input class="mt-2" type='button' id="displayPoints" value='Показать Точки'/>
+</div>
+ 
+@section Scripts
+{
+    <script src='@Url.Content("js/scripts/pointsManager.js")' asp-append-version="true"></script>
+    <script>
+        $(document).ready(() => {
+        var pointsManager = new PointsManager();
+        $("#displayPoints").click(() => {
+            pointsManager.loadPoints().done(() => pointsManager.display());
+        });
+        $("#container").dblclick(event => {
+            let point = pointsManager.findPoint(event.clientX, event.clientY);
+            if (point != undefined) pointsManager.deletePoint(point).done(() => pointsManager.display());
+        })
+})
+    </script>
+}
