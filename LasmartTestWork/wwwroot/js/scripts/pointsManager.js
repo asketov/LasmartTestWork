@@ -6,7 +6,6 @@ class PointsManager {
     loadPoints() {
        return $.getJSON('/point/getpoints/', (data) => {
             this.points = data;
-            console.log( this.points);
         });
     }
     display() {
