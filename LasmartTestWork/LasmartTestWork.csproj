@@ -24,4 +24,9 @@
     <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Views\Comment\Partials\" />
+    <Folder Include="Views\Point\Partials\" />
+  </ItemGroup>
+
 </Project>
